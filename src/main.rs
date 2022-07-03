@@ -21,7 +21,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .service(hello)
     })
-    .bind(("127.0.0.1", get_server_port()))?
+    .bind((get_host(), get_server_port()))?
     .run()
     .await
 }
